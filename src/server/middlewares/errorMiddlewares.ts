@@ -1,4 +1,4 @@
-import { type NextFunction, type Request, type Response } from "express";
+import { type Request, type Response } from "express";
 import { CustomError } from "../../CustomError/CustomError";
 
 export const notFoundError = (req: Request, res: Response) => {
@@ -14,8 +14,7 @@ export const notFoundError = (req: Request, res: Response) => {
 export const generalError = (
   { statusCode, publicMessage }: CustomError,
   req: Request,
-  res: Response,
-  next: NextFunction
+  res: Response
 ) => {
   res
     .status(statusCode || 500)
