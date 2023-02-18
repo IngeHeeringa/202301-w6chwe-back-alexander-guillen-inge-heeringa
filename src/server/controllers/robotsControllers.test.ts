@@ -1,9 +1,7 @@
 import { type Response } from "express";
-import { mongoDbUrl } from "../..";
-import connectDatabase from "../../database/connectDatabase";
-import Robot from "../../database/models/robotSchema";
-import { requestMock, responseMock } from "../../mocks/robotsMocks";
-import { getRobots } from "./robotsControllers";
+import Robot from "../../database/models/robotSchema.js";
+import { requestMock, responseMock } from "../../mocks/robotsMocks.js";
+import { getRobots } from "./robotsControllers.js";
 
 describe("Given a getRobots controller", () => {
   describe("When it receives a request and response", () => {

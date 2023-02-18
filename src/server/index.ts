@@ -1,13 +1,12 @@
 import express from "express";
 import morgan from "morgan";
+import robotsRouter from "./routers/robotsRouter.js";
 const app = express();
 
 app.use(morgan("dev"));
 
 app.use(express.json());
 
-app.use("/robots", (req, res) => {
-  res.status(200).json({});
-});
+app.use("/", robotsRouter);
 
 export default app;
