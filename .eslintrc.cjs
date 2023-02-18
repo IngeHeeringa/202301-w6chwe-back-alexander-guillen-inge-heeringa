@@ -17,7 +17,7 @@ module.exports = {
       },
     },
     {
-      files: ["src/**/models/**/*.ts"],
+      files: ["src/**/models/**/*.ts", "src/**/*.ts"],
       rules: {
         "@typescript-eslint/naming-convention": "off",
       },
@@ -27,5 +27,8 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  rules: { "no-implicit-coercion": "off" },
+  rules: {
+    "no-implicit-coercion": "off",
+    "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
+  },
 };

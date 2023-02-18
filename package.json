@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "test:coverage": "jest --coverage",
+    "test:coverage": "jest --coverage --watchAll=false",
     "start": "node dist",
     "build": "npx tsc",
     "build:dev": "npx tsc -w",
