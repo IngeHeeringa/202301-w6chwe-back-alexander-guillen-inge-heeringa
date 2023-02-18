@@ -1,6 +1,7 @@
 import "./loadEnvironment.js";
 import connectDatabase from "./database/connectDatabase.js";
 import startServer from "./server/startServer.js";
+import mongoose from "mongoose";
 
 const port = process.env.PORT ?? 4000;
 const mongoDbUrl = process.env.MONGODB_CONNECTION_URL!;
