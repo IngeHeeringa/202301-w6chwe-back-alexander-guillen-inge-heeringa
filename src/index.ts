@@ -1,10 +1,9 @@
 import "./loadEnvironment.js";
-import connectDatabase from "./database/connectDatabase.js";
 import startServer from "./server/startServer.js";
-import mongoose from "mongoose";
+import connectDatabase from "./database/connectDatabase.js";
 
+export const mongoDbUrl = process.env.MONGODB_CONNECTION_URL!;
 const port = process.env.PORT ?? 4000;
-const mongoDbUrl = process.env.MONGODB_CONNECTION_URL!;
 
-await connectDatabase(mongoDbUrl);
 await startServer(+port);
+await connectDatabase(mongoDbUrl);
