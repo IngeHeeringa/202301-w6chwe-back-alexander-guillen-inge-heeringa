@@ -5,4 +5,5 @@ export const getRobots = async (req: Request, res: Response) => {
   const robots = await Robot.find({});
 
   res.status(200).json({ robots });
+  res.set("Access-Control-Allow-Origin", "*");
 };
