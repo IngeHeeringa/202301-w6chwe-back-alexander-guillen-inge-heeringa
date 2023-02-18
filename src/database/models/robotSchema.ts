@@ -10,4 +10,6 @@ const robotSchema = new mongoose.Schema({
   creationDate: Date,
 });
 
-export default robotSchema;
+const Robot = mongoose.model("Robot", robotSchema);
+
+export default Robot;
