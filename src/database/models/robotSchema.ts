@@ -12,4 +12,11 @@ const robotSchema = new mongoose.Schema({
 
 const Robot = mongoose.model("Robot", robotSchema);
 
+robotSchema.set("toJSON", {
+  virtuals: true,
+  transform(doc, ret) {
+    delete ret._id;
+  },
+});
+
 export default Robot;
