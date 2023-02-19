@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { getRobots } from "../controllers/robotsControllers.js";
+import { getRobotById, getRobots } from "../controllers/robotsControllers.js";
 
 const robotsRouter = Router();
 
 const robotsEndpoint = "robots";
 
 robotsRouter.get(`/${robotsEndpoint}`, getRobots);
+robotsRouter.get(`/${robotsEndpoint}/:idRobot`, getRobotById);
 
 export default robotsRouter;
