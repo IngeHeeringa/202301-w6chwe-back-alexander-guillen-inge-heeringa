@@ -40,3 +40,23 @@ export const getRobotById = async (
     next(getRobotError);
   }
 };
+
+export const deleteRobotById = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const { idRobot } = req.params;
+    const robot = await Robot.findByIdAndDelete(idRobot).exec();
+    res.status(200).json({ robot });
+  } catch (error) {
+    const deleteRobotError = new CustomError(
+      error.message as string,
+      500,
+      "Sorry, we could not delete the requested robot"
+    );
+
+    next(deleteRobotError);
+  }
+};
