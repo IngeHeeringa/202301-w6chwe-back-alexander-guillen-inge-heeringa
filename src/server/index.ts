@@ -3,7 +3,6 @@ import morgan from "morgan";
 import cors from "cors";
 import robotsRouter from "./routers/robotsRouter.js";
 import { generalError, notFoundError } from "./middlewares/errorMiddlewares.js";
-import userRouter from "./routers/userRouter.js";
 
 const app = express();
 

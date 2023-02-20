@@ -2,7 +2,8 @@ import { type Request, type NextFunction, type Response } from "express";
 
 export const requestMock = {
   params: {},
-} as Request;
+  header: jest.fn(),
+} as unknown as Request;
 
 export const responseMock = {
   status: jest.fn().mockReturnThis(),
