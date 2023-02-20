@@ -2,6 +2,7 @@ module.exports = {
   env: {
     es2021: true,
     node: true,
+    jest: true,
   },
   extends: ["xo", "prettier"],
   overrides: [
@@ -27,6 +28,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
+  ignorePatterns: ["*.js"],
   rules: {
     "no-implicit-coercion": "off",
     "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
