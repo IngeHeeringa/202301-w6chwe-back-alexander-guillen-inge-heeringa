@@ -1,5 +1,5 @@
 import { type Response } from "express";
-import Robot from "../../database/models/robotSchema.js";
+import Robot from "../../database/models/Robot.js";
 import {
   nextMock,
   requestMock,
