@@ -30,7 +30,7 @@ describe("Given a generalError middleware", () => {
         "Endpoint not found"
       );
 
-      generalError(error, requestMock, responseMock as Response);
+      generalError(error, requestMock, responseMock as Response, nextMock);
 
       expect(responseMock.status).toHaveBeenCalledWith(500);
       expect(responseMock.json).toHaveBeenCalledWith({

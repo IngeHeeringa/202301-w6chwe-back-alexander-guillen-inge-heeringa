@@ -18,7 +18,8 @@ export const notFoundError = (
 export const generalError = (
   { statusCode, publicMessage }: CustomError,
   req: Request,
-  res: Response
+  res: Response,
+  next: NextFunction
 ) => {
   res
     .status(statusCode || 500)
