@@ -8,7 +8,7 @@ import {
 import { generalError, notFoundError } from "./errorMiddlewares.js";
 
 describe("Given a notFoundError middleware", () => {
-  describe("When it receives a response, resquest and next function", () => {
+  describe("When it receives a response, request and next function", () => {
     test("Then it should next a not found error with status code 400", () => {
       notFoundError(requestMock, responseMock as Response, nextMock);
 
@@ -23,7 +23,7 @@ describe("Given a notFoundError middleware", () => {
 
 describe("Given a generalError middleware", () => {
   describe("When it receives a response, a request and error that has status code 500 and public message 'Endpoint not found'", () => {
-    test("Then it should emmit a response with status code 200 and an object that has public message 'Endpoint not found'", () => {
+    test("Then it should emit a response with status code 200 and an object that has public message 'Endpoint not found'", () => {
       const error = new CustomError(
         "Page not found",
         500,
