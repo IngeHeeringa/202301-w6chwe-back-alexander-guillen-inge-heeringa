@@ -1,11 +1,19 @@
 import { type NextFunction, type Request, type Response } from "express";
-import { CustomError } from "../../CustomError/CustomError";
-import { User } from "../../database/models/User";
-import { type UserCredentials } from "../types";
+import { CustomError } from "../../CustomError/CustomError.js";
+import { User } from "../../database/models/User.js";
+import { type UserCredentials } from "../types.js";
 import jwt from "jsonwebtoken";
 
-const loginUser = async (req: Request, res: Response, next: NextFunction) => {
-  const { username, password } = req.body as UserCredentials;
+const loginUserController = async (
+  req: Request<
+    Record<string, unknown>,
+    Record<string, unknown>,
+    UserCredentials
+  >,
+  res: Response,
+  next: NextFunction
+) => {
+  const { username, password } = req.body;
 
   const user = await User.findOne({ username, password });
 
@@ -30,4 +38,4 @@ const loginUser = async (req: Request, res: Response, next: NextFunction) => {
   res.status(200).json({ token });
 };
 
-export default loginUser;
+export default loginUserController;
